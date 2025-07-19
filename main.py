@@ -1427,95 +1427,130 @@ class ReportGenerator:
         <html>
         <head>
             <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>频率词统计报告</title>
             <style>
-                body { font-family: Arial, sans-serif; margin: 20px; }
-                h1, h2 { color: #333; }
-                table { border-collapse: collapse; width: 100%; margin-top: 20px; }
-                th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-                th { background-color: #f2f2f2; }
+                body { 
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+                    margin: 10px; 
+                    line-height: 1.6;
+                }
+                h1, h2 { color: #333; margin-bottom: 10px; }
+                
+                /* 移动端优化的表格 */
+                .table-container {
+                    overflow-x: auto;
+                    -webkit-overflow-scrolling: touch;
+                }
+                table { 
+                    border-collapse: collapse; 
+                    width: 100%; 
+                    margin-top: 20px; 
+                    min-width: 600px;
+                }
+                th, td { 
+                    border: 1px solid #ddd; 
+                    padding: 8px; 
+                    text-align: left; 
+                    word-wrap: break-word;
+                }
+                th { background-color: #f2f2f2; font-size: 14px; }
                 tr:nth-child(even) { background-color: #f9f9f9; }
+                
                 .word { font-weight: bold; }
                 .count { text-align: center; }
                 .percentage { text-align: center; }
-                .titles { max-width: 500px; }
-                .source { color: #666; font-style: italic; }
-                .error { color: #d9534f; }
+                .titles { 
+                    max-width: 300px; 
+                    word-break: break-word;
+                }
+                
                 .news-link { 
                     color: #007bff; 
                     text-decoration: none; 
                     border-bottom: 1px dotted #007bff;
+                    word-break: break-word;
                 }
                 .news-link:hover { 
                     color: #0056b3; 
                     text-decoration: underline; 
                 }
-                .news-link:visited { 
-                    color: #6f42c1; 
-                }
-                .no-link { 
-                    color: #333; 
-                }
+                .news-link:visited { color: #6f42c1; }
+                .no-link { color: #333; }
+                
                 .new-title {
                     background-color: #fff3cd;
                     border: 1px solid #ffc107;
                     border-radius: 3px;
-                    padding: 2px 6px;
-                    margin: 2px 0;
+                    padding: 4px 8px;
+                    margin: 4px 0;
+                    display: block;
+                    word-break: break-word;
                 }
+                
                 .new-section {
                     background-color: #d1ecf1;
                     border: 1px solid #bee5eb;
                     border-radius: 5px;
-                    padding: 10px;
-                    margin-top: 10px;
+                    padding: 15px;
+                    margin-top: 15px;
                 }
                 .new-section h3 {
                     color: #0c5460;
                     margin-top: 0;
+                }
+                .new-section ul {
+                    padding-left: 20px;
+                }
+                .new-section li {
+                    margin-bottom: 8px;
+                    word-break: break-word;
+                }
+                
+                /* 移动端媒体查询 */
+                @media (max-width: 768px) {
+                    body { margin: 5px; font-size: 14px; }
+                    h1 { font-size: 20px; }
+                    h2, h3 { font-size: 18px; }
+                    
+                    table { font-size: 12px; }
+                    th, td { padding: 6px 4px; }
+                    
+                    .titles { max-width: 200px; }
+                    .new-title { padding: 3px 6px; font-size: 13px; }
+                    .new-section { padding: 10px; }
+                }
+                
+                @media (max-width: 480px) {
+                    body { margin: 3px; font-size: 13px; }
+                    h1 { font-size: 18px; }
+                    
+                    table { font-size: 11px; min-width: 400px; }
+                    th, td { padding: 4px 2px; }
+                    
+                    .titles { max-width: 150px; }
+                    .new-section { padding: 8px; }
                 }
             </style>
         </head>
         <body>
             <h1>频率词统计报告</h1>
         """
-
-        if is_daily_summary:
-            if mode == "current":
-                html += "<p>报告类型: 当前榜单模式</p>"
-            elif mode == "incremental":
-                html += "<p>报告类型: 增量模式</p>"
-            else:
-                html += "<p>报告类型: 当日汇总</p>"
-        else:
-            html += "<p>报告类型: 实时分析</p>"
-
-        now = TimeHelper.get_beijing_time()
+        
+        # 添加表格容器
+        html += f"""<p>报告类型: {'汇总分析' if is_daily_summary else '实时分析'}</p>"""
         html += f"<p>总标题数: {total_titles}</p>"
-        html += f"<p>生成时间: {now.strftime('%Y-%m-%d %H:%M:%S')}</p>"
-
-        if report_data["failed_ids"]:
-            html += """
-            <div class="error">
-                <h2>请求失败的平台</h2>
-                <ul>
-            """
-            for id_value in report_data["failed_ids"]:
-                html += f"<li>{ReportGenerator._html_escape(id_value)}</li>"
-            html += """
-                </ul>
-            </div>
-            """
+        html += f"<p>生成时间: {TimeHelper.get_beijing_time().strftime('%Y-%m-%d %H:%M:%S')}</p>"
+        html += '<div class="table-container"><table>'
 
         html += """
-            <table>
-                <tr>
-                    <th>排名</th>
-                    <th>频率词</th>
-                    <th>出现次数</th>
-                    <th>占比</th>
-                    <th>相关标题</th>
-                </tr>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
         """
 
         for i, stat in enumerate(report_data["stats"], 1):
@@ -1538,6 +1573,7 @@ class ReportGenerator:
 
         html += """
             </table>
+        </div>
         """
 
         if report_data["new_titles"]:
