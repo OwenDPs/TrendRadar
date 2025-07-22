@@ -1,0 +1,160 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>频率词统计报告</title>
+            <style>
+                body { 
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+                    margin: 10px; 
+                    line-height: 1.6;
+                }
+                h1, h2 { color: #333; margin-bottom: 10px; }
+                
+                /* 移动端优化的表格 */
+                .table-container {
+                    overflow-x: auto;
+                    -webkit-overflow-scrolling: touch;
+                }
+                table { 
+                    border-collapse: collapse; 
+                    width: 100%; 
+                    margin-top: 20px; 
+                    min-width: 600px;
+                }
+                th, td { 
+                    border: 1px solid #ddd; 
+                    padding: 8px; 
+                    text-align: left; 
+                    word-wrap: break-word;
+                }
+                th { background-color: #f2f2f2; font-size: 14px; }
+                tr:nth-child(even) { background-color: #f9f9f9; }
+                
+                .word { font-weight: bold; }
+                .count { text-align: center; }
+                .percentage { text-align: center; }
+                .titles { 
+                    max-width: 300px; 
+                    word-break: break-word;
+                }
+                
+                .news-link { 
+                    color: #007bff; 
+                    text-decoration: none; 
+                    border-bottom: 1px dotted #007bff;
+                    word-break: break-word;
+                }
+                .news-link:hover { 
+                    color: #0056b3; 
+                    text-decoration: underline; 
+                }
+                .news-link:visited { color: #6f42c1; }
+                .no-link { color: #333; }
+                
+                .new-title {
+                    background-color: #fff3cd;
+                    border: 1px solid #ffc107;
+                    border-radius: 3px;
+                    padding: 4px 8px;
+                    margin: 4px 0;
+                    display: block;
+                    word-break: break-word;
+                }
+                
+                .new-section {
+                    background-color: #d1ecf1;
+                    border: 1px solid #bee5eb;
+                    border-radius: 5px;
+                    padding: 15px;
+                    margin-top: 15px;
+                }
+                .new-section h3 {
+                    color: #0c5460;
+                    margin-top: 0;
+                }
+                .new-section ul {
+                    padding-left: 20px;
+                }
+                .new-section li {
+                    margin-bottom: 8px;
+                    word-break: break-word;
+                }
+                
+                /* 移动端媒体查询 */
+                @media (max-width: 768px) {
+                    body { margin: 5px; font-size: 14px; }
+                    h1 { font-size: 20px; }
+                    h2, h3 { font-size: 18px; }
+                    
+                    table { font-size: 12px; }
+                    th, td { padding: 6px 4px; }
+                    
+                    .titles { max-width: 200px; }
+                    .new-title { padding: 3px 6px; font-size: 13px; }
+                    .new-section { padding: 10px; }
+                }
+                
+                @media (max-width: 480px) {
+                    body { margin: 3px; font-size: 13px; }
+                    h1 { font-size: 18px; }
+                    
+                    table { font-size: 11px; min-width: 400px; }
+                    th, td { padding: 4px 2px; }
+                    
+                    .titles { max-width: 150px; }
+                    .new-section { padding: 8px; }
+                }
+            </style>
+        </head>
+        <body>
+            <h1>频率词统计报告</h1>
+        <p>报告类型: 实时分析</p><p>总标题数: 55</p><p>生成时间: 2025-07-22 16:29:16</p><div class="table-container"><table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+        
+                <tr>
+                    <td>1</td>
+                    <td class="word">国产 中国</td>
+                    <td class="count">6</td>
+                    <td class="percentage">10.91%</td>
+                    <td class="titles"><div class='new-title'>🆕 [凤凰网] <a href="https://news.ifeng.com/c/8lCHzrZWiAw" target="_blank" class="news-link">中美下一轮关税谈判或讨论中国购买俄伊石油问题？</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 16时29分</font></div><br><div class='new-title'>🆕 [凤凰网] <a href="https://news.ifeng.com/c/8lCH8SmFwY5" target="_blank" class="news-link">阿根廷宣布放宽对中国公民签证要求</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 16时29分</font></div><br><div class='new-title'>🆕 [凤凰网] <a href="https://news.ifeng.com/c/8lCFblJHxdP" target="_blank" class="news-link">在美中国女子遭囚禁虐待：被高薪诱骗，嫌疑人系非法移民</a> [10] <font color='grey'>- 16时29分</font></div><br><div class='new-title'>🆕 [贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28343648&amp;amp;topic_name=%E4%B8%AD%E5%9B%BD%E9%9B%85%E6%B1%9F%E6%B0%B4%E5%9D%9D%E5%BC%80%E5%BB%BA%EF%BC%8C%E5%8D%B0%E5%BA%A6%E5%85%A8%E6%B0%91%E7%A0%B4%E9%98%B2" target="_blank" class="news-link">中国雅江水坝开建，印度全民破防</a> [11] <font color='grey'>- 16时29分</font></div><br><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E5%9C%A8%E7%BE%8E%E4%B8%AD%E5%9B%BD%E5%A5%B3%E5%AD%90%E9%81%AD%E5%9B%9A%E7%A6%81%E8%99%90%E5%BE%85%E5%86%85%E5%B9%95%E6%9B%9D%E5%85%89" target="_blank" class="news-link">在美中国女子遭囚禁虐待内幕曝光</a> [20] <font color='grey'>- 16时29分</font></div><br><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E8%B6%B3%E5%8D%8F%E5%B0%86%E7%BB%84%E5%BB%BA%E5%9B%BD%E5%AE%B6%E7%94%B5%E5%AD%90%E7%AB%9E%E6%8A%80%E8%B6%B3%E7%90%83%E9%98%9F" target="_blank" class="news-link">中国足协将组建国家电子竞技足球队</a> [30] <font color='grey'>- 16时29分</font></div></td>
+                </tr>
+            
+                <tr>
+                    <td>2</td>
+                    <td class="word">米哈游 原神 星穹铁道</td>
+                    <td class="count">1</td>
+                    <td class="percentage">1.82%</td>
+                    <td class="titles"><div class='new-title'>🆕 [贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28343660&amp;amp;topic_name=%E5%8E%9F%E7%A5%9E%E4%B9%9F%E6%98%AF%E7%8E%A9%E4%B8%8A%E4%BA%BA%E5%A6%BB%E8%A7%92%E8%89%B2%E4%BA%86" target="_blank" class="news-link">原神也是玩上人妻角色了</a> [6] <font color='grey'>- 16时29分</font></div></td>
+                </tr>
+            
+                <tr>
+                    <td>3</td>
+                    <td class="word">苹果 库克 iphone ipad mac ios</td>
+                    <td class="count">1</td>
+                    <td class="percentage">1.82%</td>
+                    <td class="titles"><div class='new-title'>🆕 [微博] <a href="https://m.weibo.cn/search?containerid=231522type%3D1%26q%3D%23%E9%A6%96%E6%AC%BE%E6%8A%98%E5%8F%A0iPhone%E5%AE%9A%E4%BB%B7%E6%88%96%E8%B6%85%E4%B8%80%E4%B8%87%E5%9B%9B%E5%8D%83%E5%85%83%23&amp;_T_WM=16922097837&amp;v_p=42" target="_blank" class="news-link">首款折叠iPhone定价或超一万四千元</a> [26] <font color='grey'>- 16时29分</font></div></td>
+                </tr>
+            
+                <tr>
+                    <td>4</td>
+                    <td class="word">科技</td>
+                    <td class="count">1</td>
+                    <td class="percentage">1.82%</td>
+                    <td class="titles"><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E7%A6%8F%E8%80%80%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E5%9C%A8%E6%B9%96%E5%8D%97%E6%8A%95%E6%A1%A3%E7%BA%BF%E6%AF%94%E8%82%A9%E5%8E%A6%E5%A4%A7" target="_blank" class="news-link">福耀科技大学在湖南投档线比肩厦大</a> [27] <font color='grey'>- 16时29分</font></div></td>
+                </tr>
+            
+            </table>
+        </div>
+        
+        </body>
+        </html>
+        
