@@ -1,0 +1,152 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>频率词统计报告</title>
+            <style>
+                body { 
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+                    margin: 10px; 
+                    line-height: 1.6;
+                }
+                h1, h2 { color: #333; margin-bottom: 10px; }
+                
+                /* 移动端优化的表格 */
+                .table-container {
+                    overflow-x: auto;
+                    -webkit-overflow-scrolling: touch;
+                }
+                table { 
+                    border-collapse: collapse; 
+                    width: 100%; 
+                    margin-top: 20px; 
+                    min-width: 600px;
+                }
+                th, td { 
+                    border: 1px solid #ddd; 
+                    padding: 8px; 
+                    text-align: left; 
+                    word-wrap: break-word;
+                }
+                th { background-color: #f2f2f2; font-size: 14px; }
+                tr:nth-child(even) { background-color: #f9f9f9; }
+                
+                .word { font-weight: bold; }
+                .count { text-align: center; }
+                .percentage { text-align: center; }
+                .titles { 
+                    max-width: 300px; 
+                    word-break: break-word;
+                }
+                
+                .news-link { 
+                    color: #007bff; 
+                    text-decoration: none; 
+                    border-bottom: 1px dotted #007bff;
+                    word-break: break-word;
+                }
+                .news-link:hover { 
+                    color: #0056b3; 
+                    text-decoration: underline; 
+                }
+                .news-link:visited { color: #6f42c1; }
+                .no-link { color: #333; }
+                
+                .new-title {
+                    background-color: #fff3cd;
+                    border: 1px solid #ffc107;
+                    border-radius: 3px;
+                    padding: 4px 8px;
+                    margin: 4px 0;
+                    display: block;
+                    word-break: break-word;
+                }
+                
+                .new-section {
+                    background-color: #d1ecf1;
+                    border: 1px solid #bee5eb;
+                    border-radius: 5px;
+                    padding: 15px;
+                    margin-top: 15px;
+                }
+                .new-section h3 {
+                    color: #0c5460;
+                    margin-top: 0;
+                }
+                .new-section ul {
+                    padding-left: 20px;
+                }
+                .new-section li {
+                    margin-bottom: 8px;
+                    word-break: break-word;
+                }
+                
+                /* 移动端媒体查询 */
+                @media (max-width: 768px) {
+                    body { margin: 5px; font-size: 14px; }
+                    h1 { font-size: 20px; }
+                    h2, h3 { font-size: 18px; }
+                    
+                    table { font-size: 12px; }
+                    th, td { padding: 6px 4px; }
+                    
+                    .titles { max-width: 200px; }
+                    .new-title { padding: 3px 6px; font-size: 13px; }
+                    .new-section { padding: 10px; }
+                }
+                
+                @media (max-width: 480px) {
+                    body { margin: 3px; font-size: 13px; }
+                    h1 { font-size: 18px; }
+                    
+                    table { font-size: 11px; min-width: 400px; }
+                    th, td { padding: 4px 2px; }
+                    
+                    .titles { max-width: 150px; }
+                    .new-section { padding: 8px; }
+                }
+            </style>
+        </head>
+        <body>
+            <h1>频率词统计报告</h1>
+        <p>报告类型: 实时分析</p><p>总标题数: 29</p><p>生成时间: 2025-07-22 17:49:01</p><div class="table-container"><table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+        
+                <tr>
+                    <td>1</td>
+                    <td class="word">国产 中国</td>
+                    <td class="count">3</td>
+                    <td class="percentage">10.34%</td>
+                    <td class="titles"><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/1930342019789756281" target="_blank" class="news-link">中国有 15 亿亩盐碱地，可以怎么改造？</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 17时49分</font></div><br><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7529742673893133863/" target="_blank" class="news-link">女篮负日本 中国篮球深层问题待解</a> [17] <font color='grey'>- 17时49分</font></div><br><div class='new-title'>🆕 [澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_31237353" target="_blank" class="news-link">中国足协：计划组建中国国家电子竞技足球队</a> [18] <font color='grey'>- 17时49分</font></div></td>
+                </tr>
+            
+                <tr>
+                    <td>2</td>
+                    <td class="word">美国</td>
+                    <td class="count">2</td>
+                    <td class="percentage">6.9%</td>
+                    <td class="titles"><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/1930233578790290936" target="_blank" class="news-link">美国众议院通过《天才法案》和《清晰法案》，前者已获特朗普正式签署，这两项新法案将如何影响加密货币市场？</a> [7] <font color='grey'>- 17时49分</font></div><br><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2092087" target="_blank" class="news-link">本月暴涨502%！这只美国“妖股”神了：散户“开门”集结……</a> [13] <font color='grey'>- 17时49分</font></div></td>
+                </tr>
+            
+                <tr>
+                    <td>3</td>
+                    <td class="word">科技</td>
+                    <td class="count">1</td>
+                    <td class="percentage">3.45%</td>
+                    <td class="titles"><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E6%9E%81%E6%B0%AA%E9%A6%96%E5%8F%91%E2%80%9C%E9%87%91%E7%AE%8D%E6%A3%92%E2%80%9D%E6%98%AF%E4%BB%80%E4%B9%88%E9%BB%91%E7%A7%91%E6%8A%80" target="_blank" class="news-link">极氪首发“金箍棒”是什么黑科技</a> [30] <font color='grey'>- 17时49分</font></div></td>
+                </tr>
+            
+            </table>
+        </div>
+        
+        </body>
+        </html>
+        
