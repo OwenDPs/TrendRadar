@@ -1,0 +1,176 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>频率词统计报告</title>
+            <style>
+                body { 
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+                    margin: 10px; 
+                    line-height: 1.6;
+                }
+                h1, h2 { color: #333; margin-bottom: 10px; }
+                
+                /* 移动端优化的表格 */
+                .table-container {
+                    overflow-x: auto;
+                    -webkit-overflow-scrolling: touch;
+                }
+                table { 
+                    border-collapse: collapse; 
+                    width: 100%; 
+                    margin-top: 20px; 
+                    min-width: 600px;
+                }
+                th, td { 
+                    border: 1px solid #ddd; 
+                    padding: 8px; 
+                    text-align: left; 
+                    word-wrap: break-word;
+                }
+                th { background-color: #f2f2f2; font-size: 14px; }
+                tr:nth-child(even) { background-color: #f9f9f9; }
+                
+                .word { font-weight: bold; }
+                .count { text-align: center; }
+                .percentage { text-align: center; }
+                .titles { 
+                    max-width: 300px; 
+                    word-break: break-word;
+                }
+                
+                .news-link { 
+                    color: #007bff; 
+                    text-decoration: none; 
+                    border-bottom: 1px dotted #007bff;
+                    word-break: break-word;
+                }
+                .news-link:hover { 
+                    color: #0056b3; 
+                    text-decoration: underline; 
+                }
+                .news-link:visited { color: #6f42c1; }
+                .no-link { color: #333; }
+                
+                .new-title {
+                    background-color: #fff3cd;
+                    border: 1px solid #ffc107;
+                    border-radius: 3px;
+                    padding: 4px 8px;
+                    margin: 4px 0;
+                    display: block;
+                    word-break: break-word;
+                }
+                
+                .new-section {
+                    background-color: #d1ecf1;
+                    border: 1px solid #bee5eb;
+                    border-radius: 5px;
+                    padding: 15px;
+                    margin-top: 15px;
+                }
+                .new-section h3 {
+                    color: #0c5460;
+                    margin-top: 0;
+                }
+                .new-section ul {
+                    padding-left: 20px;
+                }
+                .new-section li {
+                    margin-bottom: 8px;
+                    word-break: break-word;
+                }
+                
+                /* 移动端媒体查询 */
+                @media (max-width: 768px) {
+                    body { margin: 5px; font-size: 14px; }
+                    h1 { font-size: 20px; }
+                    h2, h3 { font-size: 18px; }
+                    
+                    table { font-size: 12px; }
+                    th, td { padding: 6px 4px; }
+                    
+                    .titles { max-width: 200px; }
+                    .new-title { padding: 3px 6px; font-size: 13px; }
+                    .new-section { padding: 10px; }
+                }
+                
+                @media (max-width: 480px) {
+                    body { margin: 3px; font-size: 13px; }
+                    h1 { font-size: 18px; }
+                    
+                    table { font-size: 11px; min-width: 400px; }
+                    th, td { padding: 4px 2px; }
+                    
+                    .titles { max-width: 150px; }
+                    .new-section { padding: 8px; }
+                }
+            </style>
+        </head>
+        <body>
+            <h1>频率词统计报告</h1>
+        <p>报告类型: 实时分析</p><p>总标题数: 93</p><p>生成时间: 2025-07-25 11:37:38</p><div class="table-container"><table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+        
+                <tr>
+                    <td>1</td>
+                    <td class="word">国产 中国</td>
+                    <td class="count">5</td>
+                    <td class="percentage">5.38%</td>
+                    <td class="titles"><div class='new-title'>🆕 [凤凰网] <a href="https://news.ifeng.com/c/8lGkBxRqKxB" target="_blank" class="news-link">中国两个邻居，为何爆发10多年来最激烈的边境冲突</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 11时37分</font></div><br><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7530677347490562098/" target="_blank" class="news-link">吴谦任中国驻埃及使馆国防武官</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 11时37分</font></div><br><div class='new-title'>🆕 [抖音] <a href="https://www.douyin.com/hot/2180023" target="_blank" class="news-link">吴谦任中国驻埃及使馆国防武官</a> [10] <font color='grey'>- 11时37分</font></div><br><div class='new-title'>🆕 [bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=LOL%E5%85%A8%E7%90%83%E6%80%BB%E5%86%B3%E8%B5%9B%E9%87%8D%E8%BF%94%E4%B8%AD%E5%9B%BD" target="_blank" class="news-link">LOL全球总决赛重返中国</a> [13] <font color='grey'>- 11时37分</font></div><br><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7530806828163141163/" target="_blank" class="news-link">《戏台》：国产顶级讽刺喜剧</a> [19] <font color='grey'>- 11时37分</font></div></td>
+                </tr>
+            
+                <tr>
+                    <td>2</td>
+                    <td class="word">哪吒 饺子</td>
+                    <td class="count">1</td>
+                    <td class="percentage">1.08%</td>
+                    <td class="titles"><div class='new-title'>🆕 [微博] <a href="https://m.weibo.cn/search?containerid=231522type%3D1%26q%3D%23%E4%BB%8E%E5%93%AA%E5%90%922%E8%97%8F%E6%B5%B7%E4%BC%A0%E7%AD%89%E7%9C%8B%E4%B8%AD%E5%9B%BD%E6%96%87%E5%8C%96%E5%9C%88%E7%B2%89%E4%B8%96%E7%95%8C%23&amp;_T_WM=16922097837&amp;v_p=42" target="_blank" class="news-link">从哪吒2藏海传等看中国文化圈粉世界</a> [9] <font color='grey'>- 11时37分</font></div></td>
+                </tr>
+            
+                <tr>
+                    <td>3</td>
+                    <td class="word">chatgpt Sam Altman openai</td>
+                    <td class="count">1</td>
+                    <td class="percentage">1.08%</td>
+                    <td class="titles"><div class='new-title'>🆕 [华尔街见闻] <a href="https://wallstreetcn.com/articles/3751838" target="_blank" class="news-link">报道：OpenAI准备在8月初推出GPT-5</a> [10] <font color='grey'>- 11时37分</font></div></td>
+                </tr>
+            
+                <tr>
+                    <td>4</td>
+                    <td class="word">ai 人工智能</td>
+                    <td class="count">1</td>
+                    <td class="percentage">1.08%</td>
+                    <td class="titles"><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2095926" target="_blank" class="news-link">财跃星辰发布“AI小财神Pro”智能体 重新定义金融深度研究</a> [11] <font color='grey'>- 11时37分</font></div></td>
+                </tr>
+            
+                <tr>
+                    <td>5</td>
+                    <td class="word">机器人</td>
+                    <td class="count">1</td>
+                    <td class="percentage">1.08%</td>
+                    <td class="titles"><div class='new-title'>🆕 [抖音] <a href="https://www.douyin.com/hot/2179767" target="_blank" class="news-link">拥有手搓机器人的精彩生活</a> [17] <font color='grey'>- 11时37分</font></div></td>
+                </tr>
+            
+                <tr>
+                    <td>6</td>
+                    <td class="word">美国</td>
+                    <td class="count">1</td>
+                    <td class="percentage">1.08%</td>
+                    <td class="titles"><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7530799458196409898/" target="_blank" class="news-link">时隔近20年美国总统再访美联储</a> [29] <font color='grey'>- 11时37分</font></div></td>
+                </tr>
+            
+            </table>
+        </div>
+        
+        </body>
+        </html>
+        
