@@ -1,0 +1,168 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>频率词统计报告</title>
+            <style>
+                body { 
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+                    margin: 10px; 
+                    line-height: 1.6;
+                }
+                h1, h2 { color: #333; margin-bottom: 10px; }
+                
+                /* 移动端优化的表格 */
+                .table-container {
+                    overflow-x: auto;
+                    -webkit-overflow-scrolling: touch;
+                }
+                table { 
+                    border-collapse: collapse; 
+                    width: 100%; 
+                    margin-top: 20px; 
+                    min-width: 600px;
+                }
+                th, td { 
+                    border: 1px solid #ddd; 
+                    padding: 8px; 
+                    text-align: left; 
+                    word-wrap: break-word;
+                }
+                th { background-color: #f2f2f2; font-size: 14px; }
+                tr:nth-child(even) { background-color: #f9f9f9; }
+                
+                .word { font-weight: bold; }
+                .count { text-align: center; }
+                .percentage { text-align: center; }
+                .titles { 
+                    max-width: 300px; 
+                    word-break: break-word;
+                }
+                
+                .news-link { 
+                    color: #007bff; 
+                    text-decoration: none; 
+                    border-bottom: 1px dotted #007bff;
+                    word-break: break-word;
+                }
+                .news-link:hover { 
+                    color: #0056b3; 
+                    text-decoration: underline; 
+                }
+                .news-link:visited { color: #6f42c1; }
+                .no-link { color: #333; }
+                
+                .new-title {
+                    background-color: #fff3cd;
+                    border: 1px solid #ffc107;
+                    border-radius: 3px;
+                    padding: 4px 8px;
+                    margin: 4px 0;
+                    display: block;
+                    word-break: break-word;
+                }
+                
+                .new-section {
+                    background-color: #d1ecf1;
+                    border: 1px solid #bee5eb;
+                    border-radius: 5px;
+                    padding: 15px;
+                    margin-top: 15px;
+                }
+                .new-section h3 {
+                    color: #0c5460;
+                    margin-top: 0;
+                }
+                .new-section ul {
+                    padding-left: 20px;
+                }
+                .new-section li {
+                    margin-bottom: 8px;
+                    word-break: break-word;
+                }
+                
+                /* 移动端媒体查询 */
+                @media (max-width: 768px) {
+                    body { margin: 5px; font-size: 14px; }
+                    h1 { font-size: 20px; }
+                    h2, h3 { font-size: 18px; }
+                    
+                    table { font-size: 12px; }
+                    th, td { padding: 6px 4px; }
+                    
+                    .titles { max-width: 200px; }
+                    .new-title { padding: 3px 6px; font-size: 13px; }
+                    .new-section { padding: 10px; }
+                }
+                
+                @media (max-width: 480px) {
+                    body { margin: 3px; font-size: 13px; }
+                    h1 { font-size: 18px; }
+                    
+                    table { font-size: 11px; min-width: 400px; }
+                    th, td { padding: 4px 2px; }
+                    
+                    .titles { max-width: 150px; }
+                    .new-section { padding: 8px; }
+                }
+            </style>
+        </head>
+        <body>
+            <h1>频率词统计报告</h1>
+        <p>报告类型: 实时分析</p><p>总标题数: 92</p><p>生成时间: 2025-07-25 09:46:03</p><div class="table-container"><table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+        
+                <tr>
+                    <td>1</td>
+                    <td class="word">国产 中国</td>
+                    <td class="count">6</td>
+                    <td class="percentage">6.52%</td>
+                    <td class="titles"><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7530091255611621395/" target="_blank" class="news-link">马德兴：中国足协多年来没建立起人脉</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 09时46分</font></div><br><div class='new-title'>🆕 [凤凰网] <a href="https://news.ifeng.com/c/8lGkBxRqKxB" target="_blank" class="news-link">中国周边，又一场激烈冲突开始了</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 09时46分</font></div><br><div class='new-title'>🆕 [凤凰网] <a href="https://news.ifeng.com/c/8lGEaSeUIVs" target="_blank" class="news-link">胡锡进：F-16越境轰炸，中国这两个近邻大打出手</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 09时46分</font></div><br><div class='new-title'>🆕 [澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_31246352" target="_blank" class="news-link">内蒙古自治区成立中国黄金集团内蒙古矿业有限公司“7·23”事故调查组</a> [8] <font color='grey'>- 09时46分</font></div><br><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E5%91%A8%E8%BE%B9%E5%8F%88%E4%B8%80%E5%9C%BA%E6%BF%80%E7%83%88%E5%86%B2%E7%AA%81%E5%BC%80%E5%A7%8B%E4%BA%86" target="_blank" class="news-link">中国周边又一场激烈冲突开始了</a> [10] <font color='grey'>- 09时46分</font></div><br><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E5%93%88%E8%90%A8%E5%85%8B%E6%96%AF%E5%9D%A6%E5%A5%B3%E7%BD%91%E7%BA%A2%E4%B8%BA%E6%81%B6%E6%90%9E%E4%B8%AD%E5%9B%BD%E4%BA%BA%E9%81%93%E6%AD%89" target="_blank" class="news-link">哈萨克斯坦女网红为恶搞中国人道歉</a> [12] <font color='grey'>- 09时46分</font></div></td>
+                </tr>
+            
+                <tr>
+                    <td>2</td>
+                    <td class="word">小米 雷军 xiaomi</td>
+                    <td class="count">2</td>
+                    <td class="percentage">2.17%</td>
+                    <td class="titles"><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/1931744770839015430" target="_blank" class="news-link">小米 YU7 完成 113 天 35000 公里的环测祖国山河测试，这具有哪些重要意义？</a> [11] <font color='grey'>- 09时46分</font></div><br><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/1931270718965932092" target="_blank" class="news-link">小米抽油烟机宣传能把锅盖吸附上去不掉，是真的吗？是什么原理？</a> [14] <font color='grey'>- 09时46分</font></div></td>
+                </tr>
+            
+                <tr>
+                    <td>3</td>
+                    <td class="word">美国</td>
+                    <td class="count">2</td>
+                    <td class="percentage">2.17%</td>
+                    <td class="titles"><div class='new-title'>🆕 [华尔街见闻] <a href="https://wallstreetcn.com/articles/3751805" target="_blank" class="news-link">美国公布美日协议详细版本：日本5500亿美元投资美国，80亿美元采购美国农产品</a> [7] <font color='grey'>- 09时46分</font></div><br><div class='new-title'>🆕 [华尔街见闻] <a href="https://wallstreetcn.com/articles/3751829" target="_blank" class="news-link">美国7月Markit制造业PMI重陷萎缩，但整体商业活动创12月以来最快扩张</a> [10] <font color='grey'>- 09时46分</font></div></td>
+                </tr>
+            
+                <tr>
+                    <td>4</td>
+                    <td class="word">苹果 库克 iphone ipad mac ios</td>
+                    <td class="count">1</td>
+                    <td class="percentage">1.09%</td>
+                    <td class="titles"><div class='new-title'>🆕 [微博] <a href="https://m.weibo.cn/search?containerid=231522type%3D1%26q%3D%23%E8%91%9B%E8%8D%9F%E5%A9%95%E8%AF%B4%E5%A5%B3%E5%84%BF%E5%B0%8F%E8%8B%B9%E6%9E%9C%E4%B8%8D%E6%83%B3%E8%AE%A4%E5%A5%B9%23&amp;_T_WM=16922097837&amp;v_p=42" target="_blank" class="news-link">葛荟婕说女儿小苹果不想认她</a> [17] <font color='grey'>- 09时46分</font></div></td>
+                </tr>
+            
+                <tr>
+                    <td>5</td>
+                    <td class="word">芯片 光刻机</td>
+                    <td class="count">1</td>
+                    <td class="percentage">1.09%</td>
+                    <td class="titles"><div class='new-title'>🆕 [微博] <a href="https://m.weibo.cn/search?containerid=231522type%3D1%26q%3D%23%E8%87%B4%E7%99%8C%E7%89%A9%E7%96%91%E4%BC%BC%E5%8A%A0%E5%9C%A8%E6%A3%89%E5%AF%86%E7%A0%81%E5%8D%AB%E7%94%9F%E5%B7%BE%E8%8A%AF%E7%89%87%E4%B8%AD%23&amp;_T_WM=16922097837&amp;v_p=42" target="_blank" class="news-link">致癌物疑似加在棉密码卫生巾芯片中</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 09时46分</font></div></td>
+                </tr>
+            
+            </table>
+        </div>
+        
+        </body>
+        </html>
+        
