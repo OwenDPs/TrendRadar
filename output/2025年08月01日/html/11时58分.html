@@ -1,0 +1,176 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>频率词统计报告</title>
+            <style>
+                body { 
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+                    margin: 10px; 
+                    line-height: 1.6;
+                }
+                h1, h2 { color: #333; margin-bottom: 10px; }
+                
+                /* 移动端优化的表格 */
+                .table-container {
+                    overflow-x: auto;
+                    -webkit-overflow-scrolling: touch;
+                }
+                table { 
+                    border-collapse: collapse; 
+                    width: 100%; 
+                    margin-top: 20px; 
+                    min-width: 600px;
+                }
+                th, td { 
+                    border: 1px solid #ddd; 
+                    padding: 8px; 
+                    text-align: left; 
+                    word-wrap: break-word;
+                }
+                th { background-color: #f2f2f2; font-size: 14px; }
+                tr:nth-child(even) { background-color: #f9f9f9; }
+                
+                .word { font-weight: bold; }
+                .count { text-align: center; }
+                .percentage { text-align: center; }
+                .titles { 
+                    max-width: 300px; 
+                    word-break: break-word;
+                }
+                
+                .news-link { 
+                    color: #007bff; 
+                    text-decoration: none; 
+                    border-bottom: 1px dotted #007bff;
+                    word-break: break-word;
+                }
+                .news-link:hover { 
+                    color: #0056b3; 
+                    text-decoration: underline; 
+                }
+                .news-link:visited { color: #6f42c1; }
+                .no-link { color: #333; }
+                
+                .new-title {
+                    background-color: #fff3cd;
+                    border: 1px solid #ffc107;
+                    border-radius: 3px;
+                    padding: 4px 8px;
+                    margin: 4px 0;
+                    display: block;
+                    word-break: break-word;
+                }
+                
+                .new-section {
+                    background-color: #d1ecf1;
+                    border: 1px solid #bee5eb;
+                    border-radius: 5px;
+                    padding: 15px;
+                    margin-top: 15px;
+                }
+                .new-section h3 {
+                    color: #0c5460;
+                    margin-top: 0;
+                }
+                .new-section ul {
+                    padding-left: 20px;
+                }
+                .new-section li {
+                    margin-bottom: 8px;
+                    word-break: break-word;
+                }
+                
+                /* 移动端媒体查询 */
+                @media (max-width: 768px) {
+                    body { margin: 5px; font-size: 14px; }
+                    h1 { font-size: 20px; }
+                    h2, h3 { font-size: 18px; }
+                    
+                    table { font-size: 12px; }
+                    th, td { padding: 6px 4px; }
+                    
+                    .titles { max-width: 200px; }
+                    .new-title { padding: 3px 6px; font-size: 13px; }
+                    .new-section { padding: 10px; }
+                }
+                
+                @media (max-width: 480px) {
+                    body { margin: 3px; font-size: 13px; }
+                    h1 { font-size: 18px; }
+                    
+                    table { font-size: 11px; min-width: 400px; }
+                    th, td { padding: 4px 2px; }
+                    
+                    .titles { max-width: 150px; }
+                    .new-section { padding: 8px; }
+                }
+            </style>
+        </head>
+        <body>
+            <h1>频率词统计报告</h1>
+        <p>报告类型: 实时分析</p><p>总标题数: 107</p><p>生成时间: 2025-08-01 11:58:46</p><div class="table-container"><table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+        
+                <tr>
+                    <td>1</td>
+                    <td class="word">国产 中国</td>
+                    <td class="count">6</td>
+                    <td class="percentage">5.61%</td>
+                    <td class="titles"><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2103122" target="_blank" class="news-link">确认了！国家医保局已制定“新上市药品首发价格机制”，中国创新药或迈向定价新周期</a> [8] <font color='grey'>- 11时58分</font></div><br><div class='new-title'>🆕 [凤凰网] <a href="https://news.ifeng.com/c/8lSPxnO3iKZ" target="_blank" class="news-link">中国台湾地区被美国征收20%关税</a> [12] <font color='grey'>- 11时58分</font></div><br><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/1933206185181438057" target="_blank" class="news-link">成渝中线高铁开通后将成为中国最快高铁，时速可达 400 公里，为何是这条线路「抢鲜」？可能全面推广吗？</a> [15] <font color='grey'>- 11时58分</font></div><br><div class='new-title'>🆕 [抖音] <a href="https://www.douyin.com/hot/2188493" target="_blank" class="news-link">特朗普对中国台湾地区征税20%</a> [17] <font color='grey'>- 11时58分</font></div><br><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7533392837828677156/" target="_blank" class="news-link">美财长为何称中国是强硬的谈判者</a> [30] <font color='grey'>- 11时58分</font></div><br><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E5%8F%B0%E6%B9%BE%E5%9C%B0%E5%8C%BA%E8%A2%AB%E7%BE%8E%E5%9B%BD%E5%BE%81%E6%94%B620%25%E5%85%B3%E7%A8%8E" target="_blank" class="news-link">中国台湾地区被美国征收20%关税</a> [30] <font color='grey'>- 11时58分</font></div></td>
+                </tr>
+            
+                <tr>
+                    <td>2</td>
+                    <td class="word">美国</td>
+                    <td class="count">5</td>
+                    <td class="percentage">4.67%</td>
+                    <td class="titles"><div class='new-title'>🆕 [华尔街见闻] <a href="https://wallstreetcn.com/articles/3752398" target="_blank" class="news-link">8月7日生效！美国官宣“对等关税”--这是最全关税列表</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 11时58分</font></div><br><div class='new-title'>🆕 [凤凰网] <a href="https://news.ifeng.com/c/8lSUAbbsB3w" target="_blank" class="news-link">中方驳斥美方：美国可以，他国不行？</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 11时58分</font></div><br><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/1934525853238260546" target="_blank" class="news-link">美国确定对各国的新「对等关税」 ，税率自 10% 至 41% 不等，怎样解读？对全球贸易影响有多大？</a> [10] <font color='grey'>- 11时58分</font></div><br><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7533422852259712566/" target="_blank" class="news-link">美国为何能自行决定对别国征收关税</a> [14] <font color='grey'>- 11时58分</font></div><br><div class='new-title'>🆕 [微博] <a href="https://m.weibo.cn/search?containerid=231522type%3D1%26q%3D%23%E7%BE%8E%E5%9B%BD%E5%B0%86%E5%AF%B9%E5%8A%A0%E6%8B%BF%E5%A4%A7%E5%85%B3%E7%A8%8E%E4%B8%8A%E8%B0%83%E8%87%B335%25%23&amp;_T_WM=16922097837&amp;v_p=42" target="_blank" class="news-link">美国将对加拿大关税上调至35%</a> [23] <font color='grey'>- 11时58分</font></div></td>
+                </tr>
+            
+                <tr>
+                    <td>3</td>
+                    <td class="word">黄仁勋 英伟达 NVIDIA</td>
+                    <td class="count">2</td>
+                    <td class="percentage">1.87%</td>
+                    <td class="titles"><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/1934519111527920225" target="_blank" class="news-link">英伟达回应算力芯片被曝存在严重安全问题「不存在『后门』」，怎样看这一回应？此次事件对英伟达影响有多大？</a> [9] <font color='grey'>- 11时58分</font></div><br><div class='new-title'>🆕 [凤凰网] <a href="https://tech.ifeng.com/c/8lSL17UkzFG" target="_blank" class="news-link">英伟达回应芯片“后门”问题</a> [10] <font color='grey'>- 11时58分</font></div></td>
+                </tr>
+            
+                <tr>
+                    <td>4</td>
+                    <td class="word">米哈游 原神 星穹铁道</td>
+                    <td class="count">1</td>
+                    <td class="percentage">0.93%</td>
+                    <td class="titles"><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/1934233145982564238" target="_blank" class="news-link">如何看待《崩坏：星穹铁道》V3.5 开发者电台 | 系统优化、高难挑战玩法预告？</a> [13] <font color='grey'>- 11时58分</font></div></td>
+                </tr>
+            
+                <tr>
+                    <td>5</td>
+                    <td class="word">小米 雷军 xiaomi</td>
+                    <td class="count">1</td>
+                    <td class="percentage">0.93%</td>
+                    <td class="titles"><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/1923709941329425575" target="_blank" class="news-link">小米产能不足，为什么不建一个类似于特斯拉超级工厂年产 200 万量的生产基地，这样的生产基地难度在哪里？</a> [16] <font color='grey'>- 11时58分</font></div></td>
+                </tr>
+            
+                <tr>
+                    <td>6</td>
+                    <td class="word">ai 人工智能</td>
+                    <td class="count">1</td>
+                    <td class="percentage">0.93%</td>
+                    <td class="titles"><div class='new-title'>🆕 [华尔街见闻] <a href="https://wallstreetcn.com/articles/3752362" target="_blank" class="news-link">国常会：通过《关于深入实施“人工智能+”行动的意见》，实施个人消费贷款贴息政策与服务业经营主体贷款贴息政策</a> [10] <font color='grey'>- 11时58分</font></div></td>
+                </tr>
+            
+            </table>
+        </div>
+        
+        </body>
+        </html>
+        
